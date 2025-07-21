@@ -6,7 +6,7 @@
       <slot />
     </main>
 
-    <footer class="py-16 lg:py-4 text-center text-sm">
+    <footer class="py-16 text-center text-sm lg:py-4">
       <p>© {{ new Date().getFullYear() }} - {{ t("site.name") }}</p>
     </footer>
   </div>

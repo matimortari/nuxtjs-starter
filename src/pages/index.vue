@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col items-center justify-center gap-8">
     <header class="flex w-full flex-col items-center gap-4 p-4">
-      <div class="flex flex-col items-center text-center gap-2">
+      <div class="flex flex-col items-center gap-2 text-center">
         <Icon name="simple-icons:nuxt" size="50" class="text-primary" />
         <h1>{{ t("pages.index.title") }}</h1>
         <h4 class="text-primary">
@@ -19,9 +19,9 @@
       </div>
     </header>
 
-    <hr class="w-[80%] border-primary">
+    <hr class="w-4/5 border-primary">
 
-    <div class="flex flex-col items-center text-center gap-4">
+    <div class="flex flex-col items-center gap-4 text-center">
       <h3>
         {{ t("pages.index.taglineStart") }}
         <span class="text-primary">{{ t("pages.index.taglineHighlight") }}</span>
@@ -30,10 +30,10 @@
     </div>
 
     <div class="flex flex-col items-center gap-2">
-      <ul class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <ul class="grid grid-cols-2 gap-4 lg:grid-cols-4">
         <li
           v-for="(feature, index) in features" :key="index"
-          class="flex flex-row items-center gap-2 text-xs lg:text-sm font-semibold"
+          class="flex flex-row items-center gap-2 text-xs font-semibold lg:text-sm"
         >
           <Icon :name="feature.icon" :size="20" class="text-primary" />
           <span>{{ t(feature.label) }}</span>
