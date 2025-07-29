@@ -10,7 +10,7 @@
           {{ t("pages.index.greeting") }},
           <span class="font-semibold text-primary">{{ session.user?.name }}</span>
         </p>
-        <button class="btn" @click="() => signOut({ callbackUrl: '/' })">
+        <button class="btn" @click="signOut">
           {{ t("pages.index.logout") }}
         </button>
       </div>
@@ -41,6 +41,11 @@
 
 <script setup lang="ts">
 const { t } = useI18n()
-const { data: session, signOut } = useAuth()
+const { clear, session } = useUserSession()
 const { toggleTheme, themeIcon } = useTheme()
+
+function signOut() {
+  clear()
+  window.location.href = "/"
+}
 </script>

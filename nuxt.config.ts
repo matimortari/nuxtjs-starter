@@ -2,27 +2,29 @@ import { defineNuxtConfig } from "nuxt/config"
 
 export default defineNuxtConfig({
   modules: [
+    "@nuxt/icon",
     "@nuxtjs/color-mode",
     "@nuxtjs/google-fonts",
     "@nuxtjs/i18n",
-    "@nuxt/icon",
     "@nuxtjs/tailwindcss",
     "@pinia/nuxt",
-    "@sidebase/nuxt-auth",
-    "@vueuse/motion/nuxt",
+    "nuxt-auth-utils",
   ],
-  srcDir: "src",
-  serverDir: "server",
-  auth: {
-    baseURL: `${process.env.BASE_URL}/api/auth`,
-    originEnvKey: process.env.BASE_URL,
-    provider: {
-      type: "authjs",
-      defaultProvider: "github",
+  runtimeConfig: {
+    public: {
+      baseUrl: process.env.NUXT_PUBLIC_BASE_URL,
     },
-    sessionRefresh: {
-      enablePeriodically: 20000,
-      enableOnWindowFocus: true,
+    oauth: {
+      github: {
+        clientId: process.env.GITHUB_CLIENT_ID,
+        clientSecret: process.env.GITHUB_CLIENT_SECRET,
+        redirectURL: `${process.env.NUXT_PUBLIC_BASE_URL}/api/auth/github`,
+      },
+      google: {
+        clientId: process.env.GOOGLE_CLIENT_ID,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+        redirectURL: `${process.env.NUXT_PUBLIC_BASE_URL}/api/auth/google`,
+      },
     },
   },
   colorMode: {
@@ -32,16 +34,16 @@ export default defineNuxtConfig({
     storageKey: "nuxt-color-mode",
   },
   googleFonts: {
-    families: {
-      Inter: true,
-    },
     display: "swap",
     prefetch: true,
     preconnect: true,
+    families: {
+      Inter: true,
+    },
   },
   i18n: {
     baseUrl: process.env.BASE_URL,
-    restructureDir: "src/lib",
+    restructureDir: "app/lib",
     vueI18n: "i18n.ts",
     detectBrowserLanguage: {
       useCookie: false,
@@ -51,7 +53,7 @@ export default defineNuxtConfig({
     },
   },
   tailwindcss: {
-    cssPath: "~/styles/globals.css",
+    cssPath: "~/assets/styles.css",
   },
   compatibilityDate: "2025-05-24",
 })

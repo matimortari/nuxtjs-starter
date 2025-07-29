@@ -1,6 +1,6 @@
 # Nuxt.js Boilerplate 🚀
 
-A full-stack starter setup for Nuxt 3. Built with modern tools and best practices to help you get up and running quickly.
+A full-stack starter setup for Nuxt 4. Built with modern tools and best practices to help you get up and running quickly.
 
 #### Table of Contents
 
@@ -13,16 +13,16 @@ A full-stack starter setup for Nuxt 3. Built with modern tools and best practice
 
 ## 🛠️ Key Features
 
-- **Nuxt.js 3** with Composition API.
+- **Nuxt 4** with **Vue** composition API and **Nitro** server engine.
 - **TypeScript 6**.
-- **Nuxt Tailwind**.
-- **Nuxt Icons**.
-- **Nuxt Google Fonts**.
-- **NuxtAuth** for GitHub and Google authentication.
-- **Pinia** for state management.
-- **Nuxt i18n** for internationalization.
-- **Prisma** for database management.
 - **ESLint 9**.
+- **Tailwind CSS** via **@nuxtjs/tailwindcss"**.
+- **Google Fonts** via **@nuxtjs/google-fonts**.
+- **Iconify Icons** via **@nuxt/icon**.
+- **OAuth** authentication with Google and GitHub via **nuxt-auth-utils**.
+- **Pinia** for state management via **@pinia/nuxt**.
+- **@nuxtjs/i18n** for internationalization.
+- **Prisma** for database management.
 - **Vercel Analytics**.
 
 ## 🏁 Getting Started
@@ -45,7 +45,6 @@ npm install
 ```bash
 npm run dev         # Run Nuxt app in development mode
 npm run build       # Build the app for production
-npm run generate    # Generate static site (SSG)
 npm run preview     # Preview the generated static site
 npm run start       # Start production server (after build)
 npm run postinstall # Nuxt internal prepare script (auto-run)

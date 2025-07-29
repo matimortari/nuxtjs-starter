@@ -17,7 +17,6 @@ const { t } = useI18n()
 
 useLocaleHead({
   dir: true,
-  key: "id",
   seo: true,
   lang: true,
 })

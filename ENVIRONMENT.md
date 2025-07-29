@@ -5,11 +5,11 @@ This project uses several environment variables. You can copy the template below
 Refer to the documentation linked for each service to learn how to obtain and use the necessary credentials.
 
 ```bash
-BASE_URL=""
+NUXT_PUBLIC_BASE_URL=""
 
 DATABASE_URL=""
 
-AUTH_SECRET=""
+NUXT_SESSION_PASSWORD=""
 
 GITHUB_CLIENT_ID=""
 GITHUB_CLIENT_SECRET=""

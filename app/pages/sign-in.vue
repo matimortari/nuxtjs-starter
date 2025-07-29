@@ -9,13 +9,9 @@
         {{ t("pages.signIn.chooseProvider") }}
       </p>
       <div class="flex flex-row items-center gap-4">
-        <button class="btn bg-[#db4437] text-[#ebe8e8]" @click="signIn('google')">
-          <Icon name="simple-icons:google" size="20" />
-          {{ t("pages.signIn.googleSignIn") }}
-        </button>
-        <button class="btn bg-[#333333] text-[#ebe8e8]" @click="signIn('github')">
-          <Icon name="simple-icons:github" size="20" />
-          {{ t("pages.signIn.githubSignIn") }}
+        <button v-for="provider in providers" :key="provider.label" class="btn" @click="provider.click">
+          <Icon :name="provider.icon" size="25" />
+          <span>{{ provider.label }}</span>
         </button>
       </div>
     </div>
@@ -24,8 +20,25 @@
 
 <script setup lang="ts">
 const { t } = useI18n()
-const { signIn } = useAuth()
+const { loggedIn } = useUserSession()
+const router = useRouter()
 
+const providers = [
+  {
+    label: "GitHub",
+    icon: "simple-icons:github",
+    click: async () => {
+      await navigateTo("/api/auth/github", { external: true })
+    },
+  },
+  {
+    label: "Google",
+    icon: "logos:google-icon",
+    click: async () => {
+      await navigateTo("/api/auth/google", { external: true })
+    },
+  },
+]
 useHead({
   title: t("pages.signIn.meta.title"),
   meta: [{ name: "description", content: t("pages.signIn.meta.description") }],
@@ -37,8 +50,8 @@ useSeoMeta({
 })
 
 watchEffect(async () => {
-  if (useAuth().data.value) {
-    await navigateTo("/")
+  if (loggedIn) {
+    await router.push("/")
   }
 })
 </script>

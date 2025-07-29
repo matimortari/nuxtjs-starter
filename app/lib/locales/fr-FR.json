@@ -35,14 +35,14 @@
       "signIn": "Connexion",
       "errorLogout": "Une erreur est survenue!",
       "features": {
-        "nuxt3": "Nuxt 3",
+        "nuxt3": "Nuxt 4",
         "typescript": "TypeScript 6",
         "tailwind": "Tailwind CSS",
         "nuxtIcons": "Nuxt Icons",
         "googleFonts": "Google Fonts",
         "pinia": "Pinia",
         "i18n": "Nuxt i18n",
-        "nuxtAuth": "Nuxt Auth",
+        "OAuth": "OAuth",
         "prisma": "Prisma",
         "eslint": "ESLint 9",
         "vercelAnalytics": "Vercel Analytics"

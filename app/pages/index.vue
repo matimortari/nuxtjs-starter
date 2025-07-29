@@ -64,7 +64,7 @@ const features = [
   { icon: "ph:text-aa", label: "pages.index.features.googleFonts" },
   { icon: "mdi:fruit-pineapple", label: "pages.index.features.pinia" },
   { icon: "ph:translate", label: "pages.index.features.i18n" },
-  { icon: "ph:lock-key-open", label: "pages.index.features.nuxtAuth" },
+  { icon: "ph:lock-key-open", label: "pages.index.features.OAuth" },
   { icon: "simple-icons:prisma", label: "pages.index.features.prisma" },
   { icon: "simple-icons:eslint", label: "pages.index.features.eslint" },
   { icon: "simple-icons:vercel", label: "pages.index.features.vercelAnalytics" },
