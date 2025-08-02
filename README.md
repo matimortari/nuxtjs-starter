@@ -6,8 +6,7 @@ A full-stack starter setup for Nuxt 4. Built with modern tools and best practice
 
 - [🛠️ Key Features](#-key-features)
 - [🏁 Getting Started](#-getting-started)
-- [🛢️ Database](#-database)
-- [🛡️ Linting](#-linting)
+- [📜 Scripts](#-scripts)
 - [🔐 Environment Variables](#-environment-variables)
 - [📬 Contact](#-contact)
 
@@ -16,7 +15,7 @@ A full-stack starter setup for Nuxt 4. Built with modern tools and best practice
 - **Nuxt 4** with **Vue** composition API and **Nitro** server engine.
 - **TypeScript 6**.
 - **ESLint 9**.
-- **Tailwind CSS** via **@nuxtjs/tailwindcss"**.
+- **Tailwind CSS** via **@nuxtjs/tailwindcss**.
 - **Google Fonts** via **@nuxtjs/google-fonts**.
 - **Iconify Icons** via **@nuxt/icon**.
 - **OAuth** authentication with Google and GitHub via **nuxt-auth-utils**.
@@ -40,34 +39,30 @@ cd <project-name>
 npm install
 ```
 
-- Use the following scripts to develop, build, and manage the project:
+- Migrate or push the database schema and run the application:
 
 ```bash
-npm run dev         # Run Nuxt app in development mode
-npm run build       # Build the app for production
-npm run preview     # Preview the generated static site
-npm run start       # Start production server (after build)
-npm run postinstall # Nuxt internal prepare script (auto-run)
+npm run db:migrate
+# or
+npm run db:push
+npm run dev
 ```
 
-## 🛢️ Database
+> ⚠️ Ensure your `.env` file is properly configured before running database commands.
 
-Use the following commands to manage your Prisma schema and development database:
+## 📜 Scripts
 
-```bash
-npm run db:push     # Push schema changes to the database without generating migrations
-npm run db:dev      # Run development migrations and generate the Prisma client
-npm run db:deploy   # Apply migrations in a production environment (.env.production)
-npm run db:studio   # Open Prisma Studio to inspect and edit data
-```
-
-## 🛡️ Linting
-
-- To lint your codebase for style issues and ensure code quality, use the following commands:
+The following scripts are available to manage the application:
 
 ```bash
-npm run lint        # Check code style with ESLint
-npm run lint:fix    # Auto-fix linting issues
+npm run dev # Run the app in development mode
+npm run build # Build the app for production
+npm run postinstall # Create the .nuxt directory and generate types
+npm run lint # Run ESLint to check for code quality issues
+npm run lint:fix # Run ESLint and automatically fix issues
+npm run db:push # Push schema changes directly to the database
+npm run db:migrate # Apply migrations to the database and generate the Prisma client
+npm run db:studio # Open Prisma Studio in the browser for database management
 ```
 
 ## 🔐 Environment Variables
