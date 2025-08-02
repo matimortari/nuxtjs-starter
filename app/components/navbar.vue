@@ -5,10 +5,10 @@
         <Icon name="simple-icons:nuxt" size="35" class="text-primary" />
       </NuxtLink>
 
-      <div v-if="session" class="flex flex-row items-center gap-2">
+      <div v-if="userStore.user" class="flex flex-row items-center gap-2">
         <p class="text-sm">
           {{ t("pages.index.greeting") }},
-          <span class="font-semibold text-primary">{{ session.user?.name }}</span>
+          <span class="font-semibold text-primary">{{ userStore.user?.name }}</span>
         </p>
         <button class="btn" @click="signOut">
           {{ t("pages.index.logout") }}
@@ -40,9 +40,21 @@
 </template>
 
 <script setup lang="ts">
+import { useUserStore } from '~/lib/stores/user-store'
+
 const { t } = useI18n()
-const { clear, session } = useUserSession()
+const { clear } = useUserSession()
 const { toggleTheme, themeIcon } = useTheme()
+const userStore = useUserStore()
+
+onMounted(async () => {
+  try {
+    await userStore.getUser()
+  }
+  catch (error) {
+    console.error("Failed to fetch user:", error)
+  }
+})
 
 function signOut() {
   clear()

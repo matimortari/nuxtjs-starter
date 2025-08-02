@@ -9,7 +9,7 @@
         {{ t("pages.signIn.chooseProvider") }}
       </p>
       <div class="flex flex-row items-center gap-4">
-        <button v-for="provider in providers" :key="provider.label" class="btn" @click="provider.click">
+        <button v-for="provider in providers" :key="provider.name" class="btn" @click="provider.click">
           <Icon :name="provider.icon" size="25" />
           <span>{{ provider.label }}</span>
         </button>
@@ -20,25 +20,26 @@
 
 <script setup lang="ts">
 const { t } = useI18n()
-const { loggedIn } = useUserSession()
-const router = useRouter()
 
 const providers = [
   {
-    label: "GitHub",
+    name: "github",
+    label: "Sign In With GitHub",
     icon: "simple-icons:github",
     click: async () => {
       await navigateTo("/api/auth/github", { external: true })
     },
   },
   {
-    label: "Google",
-    icon: "logos:google-icon",
+    name: "google",
+    label: "Sign In With ",
+    icon: "simple-icons:google",
     click: async () => {
       await navigateTo("/api/auth/google", { external: true })
     },
   },
 ]
+
 useHead({
   title: t("pages.signIn.meta.title"),
   meta: [{ name: "description", content: t("pages.signIn.meta.description") }],
@@ -47,11 +48,5 @@ useHead({
 useSeoMeta({
   title: t("pages.signIn.meta.title"),
   description: t("pages.signIn.meta.description"),
-})
-
-watchEffect(async () => {
-  if (loggedIn) {
-    await router.push("/")
-  }
 })
 </script>

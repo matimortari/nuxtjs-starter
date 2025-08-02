@@ -1,5 +1,3 @@
-import { getBaseUrl } from "~~/app/lib/utils"
-
 export const useUserStore = defineStore("user", () => {
   const user = ref<Record<string, any> | null>(null)
   const isLoading = ref(false)
@@ -10,8 +8,7 @@ export const useUserStore = defineStore("user", () => {
     error.value = null
 
     try {
-      const baseUrl = getBaseUrl()
-      const response = await fetch(`${baseUrl}/api/user`, {
+      const response = await fetch("api/user", {
         method: "GET",
       })
       if (!response.ok)
@@ -34,8 +31,7 @@ export const useUserStore = defineStore("user", () => {
     error.value = null
 
     try {
-      const baseUrl = getBaseUrl()
-      const response = await fetch(`${baseUrl}/api/user`, {
+      const response = await fetch("api/user", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       })

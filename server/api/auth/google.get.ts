@@ -6,12 +6,12 @@ export default defineOAuthGoogleEventHandler({
     if (!user || typeof user !== "object") {
       throw createError({ statusCode: 400, statusMessage: "Invalid user data received from Google" })
     }
-    
+
     const googleId = user.id?.toString() || user.sub?.toString()
     const email = user.email
     const name = user.name || user.given_name
     const picture = user.picture
-    
+
     console.log("Received tokens from Google:", JSON.stringify(tokens, null, 2))
     console.log("Extracted user data from Google:", { googleId, email, name, picture })
     if (!googleId || !email) {
@@ -27,11 +27,11 @@ export default defineOAuthGoogleEventHandler({
     })
   },
   async onError(event: H3Event, error: any) {
-    console.error("GitHub OAuth error:", error)
+    console.error("Google OAuth error:", error)
     if (!event || !event.node?.res) {
       throw createError({ statusCode: 500, statusMessage: "Internal server error" })
     }
 
-    return sendRedirect(event, "/login?error=google_oauth_failed")
+    return sendRedirect(event, "/sign-in?error=google_oauth_failed")
   },
 })
