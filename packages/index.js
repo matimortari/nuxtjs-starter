@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import { execSync } from "node:child_process"
 import { existsSync, readFileSync, rmSync, writeFileSync } from "node:fs"
 import { join } from "node:path"
 import { confirm, input, select } from "@inquirer/prompts"
@@ -12,31 +13,6 @@ async function cloneRepo(branch, destination) {
   await simpleGit(destination).removeRemote("origin")
 }
 
-async function askVersionChoice() {
-  return await select({
-    message: "Which version of the boilerplate do you want to clone?",
-    choices: [
-      { name: "Default", value: "main" },
-      { name: "Include Tests", value: "with-tests" },
-    ],
-  })
-}
-
-async function askProjectName() {
-  return await input({
-    message: "Enter your project name:",
-    default: "nuxt-app",
-  })
-}
-
-async function askInitGit() {
-  return await confirm({
-    message:
-      "Do you want to initialize a local Git repository in this project?",
-    default: true,
-  })
-}
-
 function updatePackageName(destination, newName) {
   const packageJsonPath = join(destination, "package.json")
   const packageData = JSON.parse(readFileSync(packageJsonPath, "utf8"))
@@ -45,11 +21,31 @@ function updatePackageName(destination, newName) {
 }
 
 async function run() {
-  const projectName = await askProjectName()
-  const versionChoice = await askVersionChoice()
-  const initGit = await askInitGit()
-  const destination = join(process.cwd(), projectName)
+  const projectName = await input({
+    message: "Enter your project name:",
+    default: "my-nuxt-app",
+  })
 
+  const versionChoice = await select({
+    message: "Which version of the boilerplate do you want to clone?",
+    choices: [
+      { name: "Default", value: "main" },
+      { name: "Include Tests", value: "with-tests" },
+      { name: "Include Internalization", value: "with-i18n" },
+    ],
+  })
+
+  const initGit = await confirm({
+    message: "Do you want to initialize a local Git repository in the project?",
+    default: true,
+  })
+
+  const installDeps = await confirm({
+    message: "Do you want to install dependencies?",
+    default: true,
+  })
+
+  const destination = join(process.cwd(), projectName)
   if (existsSync(destination)) {
     console.log(`The folder ${projectName} already exists.`)
     return
@@ -57,6 +53,12 @@ async function run() {
 
   await cloneRepo(versionChoice, destination)
   updatePackageName(destination, projectName)
+  writeFileSync(join(destination, ".env"), `PROJECT_NAME=${projectName}`)
+  if (installDeps) {
+    console.log("Installing dependencies...")
+    execSync("npm install", { cwd: destination, stdio: "inherit" })
+    console.log("Dependencies installed.")
+  }
 
   rmSync(join(destination, ".git"), { recursive: true, force: true })
   if (initGit) {

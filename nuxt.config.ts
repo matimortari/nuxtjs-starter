@@ -1,3 +1,5 @@
+import { fileURLToPath } from "node:url"
+
 export default defineNuxtConfig({
   modules: [
     "@nuxt/icon",
@@ -8,21 +10,12 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "nuxt-auth-utils",
   ],
+  alias: {
+    "#server": fileURLToPath(new URL("./server", import.meta.url)),
+  },
   runtimeConfig: {
     public: {
       baseUrl: process.env.NUXT_PUBLIC_BASE_URL,
-    },
-    oauth: {
-      github: {
-        clientId: process.env.NUXT_OAUTH_GITHUB_CLIENT_ID,
-        clientSecret: process.env.NUXT_OAUTH_GITHUB_CLIENT_SECRET,
-        redirectURL: `${process.env.NUXT_PUBLIC_BASE_URL}/api/auth/github`,
-      },
-      google: {
-        clientId: process.env.NUXT_OAUTH_NUXT_OAUTH_GOOGLE_CLIENT_ID,
-        clientSecret: process.env.NUXT_OAUTH_GOOGLE_CLIENT_SECRET,
-        redirectURL: `${process.env.NUXT_PUBLIC_BASE_URL}/api/auth/google`,
-      },
     },
   },
   colorMode: {

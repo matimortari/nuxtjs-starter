@@ -2,20 +2,22 @@
   <div class="flex flex-col items-center justify-center gap-8">
     <header class="flex w-full flex-col items-center gap-4 p-4">
       <div class="flex flex-col items-center gap-2 text-center">
-        <Icon name="simple-icons:nuxt" size="50" class="text-primary" />
-        <h1>{{ t("pages.index.title") }}</h1>
+        <icon name="simple-icons:nuxt" size="50" class="text-primary" />
+        <h1>
+          {{ t("pages.index.title") }}
+        </h1>
         <h4 class="text-primary">
           {{ t("pages.index.description") }}
         </h4>
       </div>
 
       <div class="flex flex-row items-center gap-2">
-        <NuxtLink to="/" class="btn">
+        <nuxt-link to="/" class="btn">
           {{ t("pages.index.link") }}
-        </NuxtLink>
-        <NuxtLink to="/minimal" class="btn">
+        </nuxt-link>
+        <nuxt-link to="/minimal" class="btn">
           {{ t("pages.minimal.link") }}
-        </NuxtLink>
+        </nuxt-link>
       </div>
     </header>
 
@@ -35,7 +37,7 @@
           v-for="(feature, index) in features" :key="index"
           class="flex flex-row items-center gap-2 text-xs font-semibold lg:text-sm"
         >
-          <Icon :name="feature.icon" :size="20" class="text-primary" />
+          <icon :name="feature.icon" :size="20" class="text-primary" />
           <span>{{ t(feature.label) }}</span>
         </li>
       </ul>

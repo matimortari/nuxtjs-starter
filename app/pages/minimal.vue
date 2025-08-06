@@ -1,6 +1,8 @@
 <template>
   <div class="p-4">
-    <h1>{{ t("pages.minimal.title") }}</h1>
+    <h1>
+      {{ t("pages.minimal.title") }}
+    </h1>
 
     <main class="my-4 text-muted-foreground [&>*]:mb-4">
       <p v-for="index in 3" :key="index">
