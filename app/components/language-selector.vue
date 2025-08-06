@@ -6,7 +6,7 @@
       <Icon name="ph:caret-down" size="20" class="transition-all duration-500" :class="{ 'rotate-180': isOpen }" />
     </button>
 
-    <ul v-if="isOpen" class="popover absolute right-4 mt-1">
+    <ul v-if="isOpen" class="overlay absolute right-4 mt-1">
       <li v-for="language in $i18n.availableLocales" :key="language" class="btn" @click="() => setLanguage(language)">
         {{ t(`locale.${language}`) }}
       </li>

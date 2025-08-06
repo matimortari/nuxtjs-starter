@@ -2,7 +2,7 @@
   <Teleport to="body">
     <transition name="fade">
       <div v-if="isOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50" @mousedown.self="close">
-        <div class="popover">
+        <div class="overlay">
           <header class="flex flex-row items-center justify-between gap-4">
             <h2>{{ title }}</h2>
             <button @mousedown="close">

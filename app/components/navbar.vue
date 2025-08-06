@@ -40,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-import { useUserStore } from '~/lib/stores/user-store'
+import { useUserStore } from "~/lib/stores/user-store"
 
 const { t } = useI18n()
 const { clear } = useUserSession()
