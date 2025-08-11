@@ -2,20 +2,20 @@
   <div class="flex flex-col items-center justify-center gap-8">
     <header class="flex w-full flex-col items-center gap-4 p-4">
       <div class="flex flex-col items-center gap-2 text-center">
-        <Icon name="simple-icons:nuxt" size="50" class="text-primary" />
-        <h1>{{ t("pages.index.title") }}</h1>
+        <icon name="simple-icons:nuxt" size="50" class="text-primary" />
+        <h1>Nuxt.js Boilerplate</h1>
         <h4 class="text-primary">
-          {{ t("pages.index.description") }}
+          A ready to use starter kit for all kinds of projects.
         </h4>
       </div>
 
       <div class="flex flex-row items-center gap-2">
-        <NuxtLink to="/" class="btn">
-          {{ t("pages.index.link") }}
-        </NuxtLink>
-        <NuxtLink to="/minimal" class="btn">
-          {{ t("pages.minimal.link") }}
-        </NuxtLink>
+        <nuxt-link to="/" class="btn">
+          Home
+        </nuxt-link>
+        <nuxt-link to="/minimal" class="btn">
+          Minimal
+        </nuxt-link>
       </div>
     </header>
 
@@ -23,9 +23,7 @@
 
     <div class="flex flex-col items-center gap-4 text-center">
       <h3>
-        {{ t("pages.index.taglineStart") }}
-        <span class="text-primary">{{ t("pages.index.taglineHighlight") }}</span>
-        {{ t("pages.index.taglineEnd") }}
+        Packed with <span class="text-primary">features</span> to use
       </h3>
     </div>
 
@@ -35,8 +33,8 @@
           v-for="(feature, index) in features" :key="index"
           class="flex flex-row items-center gap-2 text-xs font-semibold lg:text-sm"
         >
-          <Icon :name="feature.icon" :size="20" class="text-primary" />
-          <span>{{ t(feature.label) }}</span>
+          <icon :name="feature.icon" :size="20" class="text-primary" />
+          <span>{{ feature.label }}</span>
         </li>
       </ul>
     </div>
@@ -44,29 +42,26 @@
 </template>
 
 <script setup lang="ts">
-const { t } = useI18n()
-
 useHead({
-  title: t("pages.index.meta.title"),
-  meta: [{ name: "description", content: t("pages.index.meta.description") }],
+  title: "Home",
+  meta: [{ name: "description", content: "Home page." }],
 })
 
 useSeoMeta({
-  title: t("pages.index.meta.title"),
-  description: t("pages.index.meta.description"),
+  title: "Home",
+  description: "Home page.",
 })
 
 const features = [
-  { icon: "simple-icons:nuxtdotjs", label: "pages.index.features.nuxt3" },
-  { icon: "simple-icons:typescript", label: "pages.index.features.typescript" },
-  { icon: "simple-icons:tailwindcss", label: "pages.index.features.tailwind" },
-  { icon: "simple-icons:iconify", label: "pages.index.features.nuxtIcons" },
-  { icon: "ph:text-aa", label: "pages.index.features.googleFonts" },
-  { icon: "mdi:fruit-pineapple", label: "pages.index.features.pinia" },
-  { icon: "ph:translate", label: "pages.index.features.i18n" },
-  { icon: "ph:lock-key-open", label: "pages.index.features.OAuth" },
-  { icon: "simple-icons:prisma", label: "pages.index.features.prisma" },
-  { icon: "simple-icons:eslint", label: "pages.index.features.eslint" },
-  { icon: "simple-icons:vercel", label: "pages.index.features.vercelAnalytics" },
+  { icon: "simple-icons:nuxtdotjs", label: "Nuxt 4" },
+  { icon: "simple-icons:typescript", label: "TypeScript" },
+  { icon: "simple-icons:tailwindcss", label: "Tailwind CSS" },
+  { icon: "simple-icons:iconify", label: "Nuxt Icons" },
+  { icon: "ph:text-aa", label: "Google Fonts" },
+  { icon: "mdi:fruit-pineapple", label: "Pinia" },
+  { icon: "ph:lock-key-open", label: "OAuth" },
+  { icon: "simple-icons:prisma", label: "Prisma" },
+  { icon: "simple-icons:eslint", label: "ESLint" },
+  { icon: "simple-icons:vercel", label: "Vercel Analytics" },
 ]
 </script>

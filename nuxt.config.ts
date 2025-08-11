@@ -5,7 +5,6 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxtjs/color-mode",
     "@nuxtjs/google-fonts",
-    "@nuxtjs/i18n",
     "@nuxtjs/tailwindcss",
     "@pinia/nuxt",
     "nuxt-auth-utils",
@@ -30,17 +29,6 @@ export default defineNuxtConfig({
     preconnect: true,
     families: {
       Inter: true,
-    },
-  },
-  i18n: {
-    baseUrl: process.env.NUXT_PUBLIC_BASE_URL,
-    restructureDir: "app/lib",
-    vueI18n: "i18n.ts",
-    detectBrowserLanguage: {
-      useCookie: false,
-      alwaysRedirect: true,
-      redirectOn: "root",
-      fallbackLocale: "en-US",
     },
   },
   tailwindcss: {

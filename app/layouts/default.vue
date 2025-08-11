@@ -7,17 +7,7 @@
     </main>
 
     <footer class="py-16 text-center text-sm lg:py-4">
-      <p>© {{ new Date().getFullYear() }} - {{ t("site.name") }}</p>
+      <p>© {{ new Date().getFullYear() }} - Nuxt.js Boilerplate</p>
     </footer>
   </div>
 </template>
-
-<script setup lang="ts">
-const { t } = useI18n()
-
-useLocaleHead({
-  dir: true,
-  seo: true,
-  lang: true,
-})
-</script>

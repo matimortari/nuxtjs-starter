@@ -20,7 +20,6 @@ A full-stack starter setup for Nuxt 4. Built with modern tools and best practice
 - **Iconify Icons** via **@nuxt/icon**.
 - **OAuth** authentication with Google and GitHub via **nuxt-auth-utils**.
 - **Pinia** for state management via **@pinia/nuxt**.
-- **@nuxtjs/i18n** for internationalization.
 - **Prisma** for database management.
 - **Vercel Analytics**.
 

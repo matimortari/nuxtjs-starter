@@ -1,26 +1,26 @@
 <template>
   <div class="p-4">
-    <h1>{{ t("pages.minimal.title") }}</h1>
+    <h1>
+      Minimal Page
+    </h1>
 
     <main class="my-4 text-muted-foreground [&>*]:mb-4">
       <p v-for="index in 3" :key="index">
-        {{ t("pages.minimal.paragraph") }}
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque iste atque, hic porro officiis fugit quae deserunt nobis dolorum odit dignissimos consequatur esse maiores repellat impedit. Quae dolorum id rem?
       </p>
     </main>
   </div>
 </template>
 
 <script setup lang="ts">
-const { t } = useI18n()
-
 useHead({
-  title: t("pages.minimal.meta.title"),
-  meta: [{ name: "description", content: t("pages.minimal.meta.description") }],
+  title: "Minimal Page",
+  meta: [{ name: "description", content: "Minimal page using fullscreen layout" }],
 })
 
 useSeoMeta({
-  title: t("pages.minimal.meta.title"),
-  description: t("pages.minimal.meta.description"),
+  title: "Minimal Page",
+  description: "Minimal page using fullscreen layout",
 })
 
 definePageMeta({
