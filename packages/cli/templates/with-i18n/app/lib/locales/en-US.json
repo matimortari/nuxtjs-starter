@@ -1,0 +1,14 @@
+{
+  "locale.en-US": "EN",
+  "locale.pt-FR": "FR",
+  "locale.dir": "ltr",
+  "site": {
+    "name": "Nuxt.js Starter"
+  },
+  "index": {
+    "meta": {
+      "title": "Nuxt.js Starter",
+      "description": "XXXXX"
+    }
+  }
+}

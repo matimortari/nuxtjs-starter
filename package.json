@@ -1,0 +1,25 @@
+{
+  "name": "nuxtjs-starter-monorepo",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "web/",
+    "packages/*"
+  ],
+  "scripts": {
+    "lint": "eslint . --debug",
+    "lint:fix": "eslint . --debug --fix"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "5.0.0",
+    "@types/eslint-plugin-tailwindcss": "3.17.0",
+    "@types/node": "24.1.0",
+    "@typescript-eslint/parser": "8.38.0",
+    "eslint": "9.32.0",
+    "eslint-plugin-format": "1.0.1",
+    "eslint-plugin-tailwindcss": "4.0.0-beta.0",
+    "rimraf": "6.0.1",
+    "typescript": "5.8.3"
+  }
+}
