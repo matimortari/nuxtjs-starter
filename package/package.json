@@ -1,0 +1,53 @@
+{
+  "name": "@matimortari/nuxtjs-starter",
+  "type": "module",
+  "version": "1.0.5",
+  "description": "A CLI tool to quickly scaffold a Nuxt.js starter project",
+  "author": "Matheus Mortari <matheus.felipe.19rt@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matimortari/nuxtjs-starter.git",
+    "directory": "cli"
+  },
+  "keywords": [
+    "starter",
+    "template",
+    "nuxt",
+    "nuxt4",
+    "nuxtjs",
+    "vue",
+    "typescript",
+    "tailwindcss"
+  ],
+  "bin": {
+    "matimortari-nuxtjs-starter": "dist/index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "clean": "rimraf dist my-nuxt-app",
+    "release": "npm version patch && npm publish --access public"
+  },
+  "dependencies": {
+    "chalk": "5.6.0",
+    "figures": "6.1.0",
+    "fs-extra": "11.3.1",
+    "inquirer": "12.9.4",
+    "ora": "8.2.0",
+    "rimraf": "6.0.1",
+    "simple-git": "3.28.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "11.0.4",
+    "@types/node": "24.3.1",
+    "ts-node": "10.9.2",
+    "tsconfig-paths": "4.2.0",
+    "typescript": "5.9.2"
+  }
+}
