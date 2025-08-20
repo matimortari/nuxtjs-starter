@@ -4,7 +4,13 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@nuxtjs/google-fonts",
     "@nuxtjs/tailwindcss",
+    "nuxt-shiki",
   ],
+  runtimeConfig: {
+    public: {
+      baseUrl: process.env.NUXT_PUBLIC_BASE_URL,
+    },
+  },
   colorMode: {
     classSuffix: "",
     preference: "system",
@@ -24,8 +30,16 @@ export default defineNuxtConfig({
       scan: true,
     },
   },
+  shiki: {
+    bundledLangs: ["bash", "html", "javascript", "json", "markdown", "typescript", "vue"],
+    bundledThemes: ["catppuccin-macchiato"],
+    highlightOptions: {
+      theme: "catppuccin-macchiato",
+    },
+  },
   tailwindcss: {
     cssPath: "~/assets/styles.css",
+    quiet: true,
   },
   compatibilityDate: "2025-05-24",
 })

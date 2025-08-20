@@ -6,12 +6,15 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@nuxtjs/google-fonts",
     "@nuxtjs/tailwindcss",
+    "@nuxt/test-utils/module",
     "@pinia/nuxt",
     "nuxt-auth-utils",
-    "@nuxt/test-utils/module",
   ],
   alias: {
     "#server": fileURLToPath(new URL("./server", import.meta.url)),
+  },
+  imports: {
+    dirs: ["lib", "lib/middleware", "lib/services", "lib/stores"],
   },
   runtimeConfig: {
     public: {
@@ -39,6 +42,7 @@ export default defineNuxtConfig({
   },
   tailwindcss: {
     cssPath: "~/assets/styles.css",
+    quiet: true,
   },
   compatibilityDate: "2025-05-24",
 })

@@ -37,8 +37,6 @@
 </template>
 
 <script setup lang="ts">
-import { useUserStore } from "~/lib/stores/user-store"
-
 const { clear } = useUserSession()
 const { toggleTheme, themeIcon } = useTheme()
 const userStore = useUserStore()

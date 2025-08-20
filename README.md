@@ -1,4 +1,4 @@
-# Nuxt.js Starter 🚀
+# Nuxt.js Starter 💚🏔️
 
 This is a monorepo setup for a Nuxt.js starter project, which includes a web application and shared packages.
 

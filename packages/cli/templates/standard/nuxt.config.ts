@@ -12,6 +12,9 @@ export default defineNuxtConfig({
   alias: {
     "#server": fileURLToPath(new URL("./server", import.meta.url)),
   },
+  imports: {
+    dirs: ["lib", "lib/middleware", "lib/services", "lib/stores"],
+  },
   runtimeConfig: {
     public: {
       baseUrl: process.env.NUXT_PUBLIC_BASE_URL,
@@ -38,6 +41,7 @@ export default defineNuxtConfig({
   },
   tailwindcss: {
     cssPath: "~/assets/styles.css",
+    quiet: true,
   },
   compatibilityDate: "2025-05-24",
 })
