@@ -28,8 +28,20 @@ export async function promptForProjectName() {
 
 export async function validateTargetDirectory(projectName: string) {
   const targetDir = path.resolve(process.cwd(), projectName)
-  if (await fs.pathExists(targetDir)) {
-    return null
+  const exists = await fs.pathExists(targetDir)
+  if (exists) {
+    const { overwrite } = await inquirer.prompt({
+      type: "confirm",
+      name: "overwrite",
+      message: `Directory "${projectName}" already exists. Overwrite?`,
+      default: false,
+    })
+
+    if (!overwrite)
+      return null
+
+    await fs.remove(targetDir)
   }
+
   return targetDir
 }

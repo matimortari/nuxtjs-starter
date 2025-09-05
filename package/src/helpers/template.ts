@@ -25,6 +25,6 @@ export async function copyPresetFiles(tmpDir: string, preset: string, targetDir:
 
   const presetAppDir = path.join(presetDir, "app")
   if (await fs.pathExists(presetAppDir)) {
-    fs.copy(presetAppDir, path.join(targetDir, "app"), { overwrite: true })
+    await fs.copy(presetAppDir, path.join(targetDir, "app"), { overwrite: true })
   }
 }
