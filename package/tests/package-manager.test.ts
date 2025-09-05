@@ -5,29 +5,26 @@ import ora from "ora"
 import { beforeEach, describe, expect, it, vi } from "vitest"
 import * as pkgMgr from "../src/helpers/package-manager"
 
-// --- Mocks ---
 vi.mock("fs-extra")
 vi.mock("inquirer")
 vi.mock("ora")
 vi.mock("node:child_process")
 
-describe("package-manager helpers", () => {
-  const readFileMock = vi.mocked(fs.readFile as unknown as (path: string, encoding: string) => Promise<string>)
-  const writeFileMock = vi.mocked(fs.writeFile)
-  const oraMock = vi.mocked(ora as any)
-  const execMock = vi.mocked(execSync)
+const readFileMock = vi.mocked(fs.readFile as unknown as (path: string, encoding: string) => Promise<string>)
+const writeFileMock = vi.mocked(fs.writeFile)
+const oraMock = vi.mocked(ora)
+const execMock = vi.mocked(execSync)
 
-  let spinnerMock: any
+let spinnerMock: any
 
-  beforeEach(() => {
-    // reset all mocks
-    vi.clearAllMocks()
+beforeEach(() => {
+  vi.clearAllMocks()
 
-    spinnerMock = { start: vi.fn().mockReturnThis(), stop: vi.fn(), succeed: vi.fn(), fail: vi.fn() }
-    oraMock.mockReturnValue(spinnerMock)
-  })
+  spinnerMock = { start: vi.fn().mockReturnThis(), stop: vi.fn(), succeed: vi.fn(), fail: vi.fn() }
+  oraMock.mockReturnValue(spinnerMock)
+})
 
-  // --- createPackageManagerCommands ---
+describe("createPackageManagerCommands", () => {
   it("should return correct commands for all package managers", () => {
     const managers = [
       { name: "npm", installCmd: "npm install", run: "npm run test" },
@@ -42,16 +39,18 @@ describe("package-manager helpers", () => {
       expect(commands.runScript("test")).toBe(run)
     })
   })
+})
 
-  // --- promptForPackageManager ---
+describe("promptForPackageManager", () => {
   it("should prompt and return selected package manager", async () => {
     vi.mocked(inquirer.prompt).mockResolvedValue({ pkgManager: "yarn" })
     const commands = await pkgMgr.promptForPackageManager()
     expect(commands.name).toBe("yarn")
     expect(commands.installCmd).toBe("yarn install")
   })
+})
 
-  // --- installDependencies ---
+describe("installDependencies", () => {
   it("should run install and lint scripts successfully", async () => {
     execMock.mockReturnValue("")
     const pkg = pkgMgr.createPackageManagerCommands("npm")
@@ -67,8 +66,9 @@ describe("package-manager helpers", () => {
     await expect(pkgMgr.installDependencies("targetDir", pkg)).rejects.toThrow("fail")
     expect(spinnerMock.fail).toHaveBeenCalledWith("Failed to install dependencies")
   })
+})
 
-  // --- updatePackageJson ---
+describe("updatePackageJson", () => {
   it("should merge dependencies correctly", async () => {
     readFileMock.mockResolvedValue(JSON.stringify({ dependencies: { a: "1" }, devDependencies: {}, scripts: {} }))
     writeFileMock.mockResolvedValue()

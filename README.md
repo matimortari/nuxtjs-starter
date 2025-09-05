@@ -15,32 +15,34 @@ This is a monorepo setup for a Nuxt.js starter project, which includes a web app
 
 #### Web Application (`web/`)
 
-- The companion web application for the product, used to showcase its structure and capabilities.
+- The web app that demonstrates the project’s capabilities.
 
 #### Command Line Interface (`package/`)
 
-- A CLI tool, packaged as a npm module to quickly scaffold Nuxt.js starter projects.
+- The CLI tool, packaged as a npm module, to scaffold new projects using this starter.
 
 ## 🛠️ Key Features
 
-#### Standard Package
+This starter includes multiple templates to kick-start different project types:
+
+#### Standard Template
 
 - **Nuxt 4** with **Vue** composition API and **Nitro** server engine.
 - **TypeScript 6**.
 - **ESLint 9**.
 - **Tailwind CSS 4**.
-- **Google Fonts** via **@nuxtjs/google-fonts**.
-- **Iconify Icons** via **@nuxt/icon**.
+- **Google Fonts** support via **@nuxtjs/google-fonts**.
+- **Iconify Icons** support via **@nuxt/icon**.
 - **OAuth** authentication with Google and GitHub via **nuxt-auth-utils**.
 - **Pinia** for state management via **@pinia/nuxt**.
 - **Prisma** for database management.
 - **Vercel Analytics**.
 
-#### i18n Package
+#### i18n Template
 
-- **i18n** support for multiple languages via **@nuxtjs/i18n**.
+- **Internationalization** support via **@nuxtjs/i18n**.
 
-#### Test Package
+#### Test Template
 
 - **Vitest** for unit and integration testing.
 - **Playwright** for end-to-end testing.
