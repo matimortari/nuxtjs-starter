@@ -32,6 +32,9 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "clean": "rimraf dist my-nuxt-app",
+    "test": "vitest run",
+    "coverage": "vitest --coverage",
+    "test:e2e": "playwright test",
     "release": "npm version patch && npm publish --access public"
   },
   "dependencies": {
@@ -44,10 +47,14 @@
     "simple-git": "3.28.0"
   },
   "devDependencies": {
+    "@playwright/test": "1.55.0",
     "@types/fs-extra": "11.0.4",
     "@types/node": "24.3.1",
+    "@vitest/coverage-v8": "3.2.4",
     "ts-node": "10.9.2",
     "tsconfig-paths": "4.2.0",
-    "typescript": "5.9.2"
+    "tsx": "4.20.5",
+    "typescript": "5.9.2",
+    "vitest": "3.2.4"
   }
 }

@@ -8,24 +8,7 @@ function mergeObjects(base = {}, extra = {}) {
   return { ...base, ...extra }
 }
 
-export async function promptForPackageManager() {
-  const { pkgManager } = await inquirer.prompt({
-    type: "list",
-    name: "pkgManager",
-    message: "Which package manager do you want to use?",
-    choices: [
-      { name: "npm", value: "npm" },
-      { name: "yarn", value: "yarn" },
-      { name: "pnpm", value: "pnpm" },
-      { name: "bun", value: "bun" },
-    ],
-    default: "npm",
-  })
-
-  return createPackageManagerCommands(pkgManager)
-}
-
-function createPackageManagerCommands(pkgManager: string) {
+export function createPackageManagerCommands(pkgManager: string) {
   switch (pkgManager) {
     case "yarn":
       return {
@@ -53,6 +36,23 @@ function createPackageManagerCommands(pkgManager: string) {
         runScript: (script: string) => `npm run ${script}`,
       }
   }
+}
+
+export async function promptForPackageManager() {
+  const { pkgManager } = await inquirer.prompt({
+    type: "list",
+    name: "pkgManager",
+    message: "Which package manager do you want to use?",
+    choices: [
+      { name: "npm", value: "npm" },
+      { name: "yarn", value: "yarn" },
+      { name: "pnpm", value: "pnpm" },
+      { name: "bun", value: "bun" },
+    ],
+    default: "npm",
+  })
+
+  return createPackageManagerCommands(pkgManager)
 }
 
 export async function installDependencies(targetDir: string, pkgManager: any) {
