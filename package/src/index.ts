@@ -4,9 +4,9 @@ import inquirer from "inquirer"
 import ora from "ora"
 import { PRESET_EXTRA_PACKAGES, PRESET_EXTRA_SCRIPTS, REPO_URL } from "./helpers/constants.js"
 import { cloneRepoToTemp, promptAndInitGit } from "./helpers/git.js"
-import { promptForProjectName, validateTargetDirectory } from "./helpers/helpers.js"
 import { installDependencies, promptForPackageManager, updatePackageJson } from "./helpers/package-manager.js"
 import { copyPresetFiles, copyRootTemplate } from "./helpers/template.js"
+import { promptForProjectName, validateTargetDirectory } from "./helpers/utils.js"
 
 async function run() {
   let tmpDir
