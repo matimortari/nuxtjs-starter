@@ -4,16 +4,12 @@ export default defineConfig({
   test: {
     globals: true,
     environment: "node",
-    exclude: [
-      "templates/**",
-      "node_modules/**",
-    ],
-
+    exclude: ["templates/**", "node_modules/**"],
     coverage: {
       provider: "v8",
       reporter: ["text", "html"],
       include: ["src/**/*.{ts,js}"],
-      exclude: ["**/*.d.ts", "test/**", "node_modules/**"],
+      exclude: ["**/*.d.ts", "tests/**", "node_modules/**"],
     },
   },
 })

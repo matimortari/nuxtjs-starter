@@ -4,24 +4,22 @@ import * as template from "../src/helpers/template"
 
 vi.mock("fs-extra")
 
-describe("template helpers", () => {
-  const tmpDir = "/tmp/mock"
-  const targetDir = "/tmp/target"
+const tmpDir = "/tmp/mock"
+const targetDir = "/tmp/target"
 
-  beforeEach(() => {
-    vi.clearAllMocks()
-  })
+beforeEach(() => {
+  vi.clearAllMocks()
+})
 
-  it("copyRootTemplate throws if path doesn't exist", async () => {
+describe("copyRootTemplate", () => {
+  it("throws if path doesn't exist", async () => {
     const pathExistsMock = vi.mocked(fs.pathExists as any)
     pathExistsMock.mockResolvedValue(false)
 
-    await expect(template.copyRootTemplate(tmpDir, targetDir)).rejects.toThrow(
-      /not found/,
-    )
+    await expect(template.copyRootTemplate(tmpDir, targetDir)).rejects.toThrow(/not found/)
   })
 
-  it("copyRootTemplate copies files if path exists", async () => {
+  it("copies files if path exists", async () => {
     const pathExistsMock = vi.mocked(fs.pathExists as any)
     const copyMock = vi.mocked(fs.copy)
 
@@ -37,17 +35,17 @@ describe("template helpers", () => {
     )
     expect(result).toContain("base")
   })
+})
 
-  it("copyPresetFiles throws if preset not found", async () => {
+describe("copyPresetFiles", () => {
+  it("throws if preset not found", async () => {
     const pathExistsMock = vi.mocked(fs.pathExists as unknown as (path: string) => Promise<boolean>)
     pathExistsMock.mockResolvedValue(false)
 
-    await expect(
-      template.copyPresetFiles(tmpDir, "standard", targetDir),
-    ).rejects.toThrow(/not found/)
+    await expect(template.copyPresetFiles(tmpDir, "standard", targetDir)).rejects.toThrow(/not found/)
   })
 
-  it("copyPresetFiles copies root files and app folder", async () => {
+  it("copies root files and app folder", async () => {
     const pathExistsMock = vi.mocked(fs.pathExists)
     const readdirMock = vi.mocked(fs.readdir as unknown as (path: string) => Promise<string[]>)
     const copyMock = vi.mocked(fs.copy)
