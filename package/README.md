@@ -4,40 +4,52 @@ A CLI tool to quickly scaffold a **Nuxt.js starter project** with modern tools a
 
 #### Table of Contents
 
-- [📦 Installation](#installation)
+- [🧪 Testing](#testing)
 - [🚀 Usage](#usage)
 - [📬 Contact](#contact)
 
-## 📦 Installation
+## 🧪 Testing
 
-Use with **npx** (recommended):
+The project includes unit and end-to-end tests set up with Vitest and Playwright. For development, you can run the tests using the following commands:
+
+- To run unit tests with Vitest:
 
 ```bash
-npx @matimortari/nuxtjs-starter
+npm run test
 ```
 
-Or install globally:
+- To check test coverage:
 
 ```bash
-npm install -g @matimortari/nuxtjs-starter
-matimortari-nuxtjs-starter
+npm run test:coverage
+```
+
+- To run end-to-end tests with Playwright:
+
+```bash
+npm run test:e2e
 ```
 
 ## 🚀 Usage
 
-Run the CLI and follow the prompts:
+Create a new project using npx:
 
 ```bash
 npx @matimortari/nuxtjs-starter
+# or install globally:
+npm install -g @matimortari/nuxtjs-starter
+matimortari-nuxtjs-starter
 ```
 
-You’ll be asked to choose:
+You’ll be prompted to choose:
 
 - Project name
 - Features (i18n, testing, etc.)
+- Install dependencies?
 - Package manager (npm, pnpm, yarn)
+- Git repository initialization?
 
-After setup, you’ll have a ready-to-use Nuxt.js project.
+After setup, you’ll have a ready-to-use Nuxt.js project with instructions to get started.
 
 ## 📬 Contact
 

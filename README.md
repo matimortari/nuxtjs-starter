@@ -96,7 +96,7 @@ npm run db:studio # Open Prisma Studio in the browser for database management
 ## 🔐 Environment Variables
 
 Be sure to configure the necessary environment variables for the application.
-For a list of required environment variables and instructions, refer to the [ENVIRONMENT.md](ENVIRONMENT.md) file.
+For a list of required environment variables and instructions, refer to the `.env.example` file included in the project template.
 
 ## 📬 Contact
 
