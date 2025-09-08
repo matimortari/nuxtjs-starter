@@ -1,7 +1,7 @@
 {
   "name": "@matimortari/nuxtjs-starter",
   "type": "module",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A CLI tool to quickly scaffold a Nuxt.js starter project",
   "author": "Matheus Mortari <matheus.felipe.19rt@gmail.com>",
   "license": "MIT",

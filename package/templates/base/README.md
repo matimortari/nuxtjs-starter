@@ -2,7 +2,12 @@
 
 This project was bootstrapped via [@matimortari/nuxtjs-starter](https://www.npmjs.com/package/@matimortari/nuxtjs-starter).
 
-## Getting Started
+#### Table of Contents
+
+- [🏁 Getting Started](#getting-started)
+- [📚 More Info](#more-info)
+
+## 🏁 Getting Started
 
 1. Install dependencies:
 
@@ -10,7 +15,7 @@ This project was bootstrapped via [@matimortari/nuxtjs-starter](https://www.npmj
 npm install
 ```
 
-2. Set up your environment variables according to the `.env` example.
+2. Set up your environment variables according to the `.env.example` file.
 
 3. Migrate or push your Prisma database schema:
 
@@ -26,7 +31,6 @@ npm run db:push
 npm run dev
 ```
 
-## More Info
+## 📚 More Info
 
-Visit the main starter repo for full documentation:
-[@matimortari/nuxtjs-starter](https://github.com/matimortari/nuxtjs-starter)
+Visit the [full project repository](https://github.com/matimortari/nuxtjs-starter) for full documentation.

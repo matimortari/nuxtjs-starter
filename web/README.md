@@ -1,7 +1,6 @@
-# Nuxt.js Starter
+# Nuxt.js Starter - Web Demo
 
-This is the **static showcase website** for the Nuxt.js Starter project.
-It demonstrates the features, CLI usage, and setup instructions for the starter.
+This is the **static showcase website** for the [Nuxt.js Starter](https://github.com/matimortari/nuxtjs-starter) project. It demonstrates the features, CLI usage, and setup instructions for the starter.
 
 #### Table of Contents
 
@@ -19,6 +18,9 @@ npm install
 - Then start the web app in development mode:
 
 ```bash
+cd .\web\
+npm run dev
+# or
 npm run dev --workspace web
 ```
 

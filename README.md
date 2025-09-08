@@ -83,20 +83,20 @@ npm run dev
 The following scripts are available to manage the application:
 
 ```bash
-npm run dev # Run the app in development mode
-npm run build # Build the app for production
+npm run dev         # Run the app in development mode
+npm run build       # Build the app for production
 npm run postinstall # Create the .nuxt directory and generate types
-npm run lint # Run ESLint to check for code quality issues
-npm run lint:fix # Run ESLint and automatically fix issues
-npm run db:push # Push schema changes directly to the database
-npm run db:migrate # Apply migrations to the database and generate the Prisma client
-npm run db:studio # Open Prisma Studio in the browser for database management
+npm run lint        # Run ESLint to check for code quality issues
+npm run lint:fix    # Run ESLint and automatically fix issues
+npm run db:push     # Push schema changes directly to the database
+npm run db:migrate  # Apply migrations to the database and generate the Prisma client
+npm run db:studio   # Open Prisma Studio in the browser for database management
 ```
 
 ## 🔐 Environment Variables
 
 Be sure to configure the necessary environment variables for the application.
-For a list of required environment variables and instructions, refer to the [ENVIRONMENT.md](ENVIRONMENT.md) file.
+For a list of required environment variables and instructions, refer to the `.env.example` file included in the project template.
 
 ## 📬 Contact
 
@@ -105,3 +105,17 @@ Feel free to reach out to discuss collaboration opportunities or to say hello!
 - [**My Email**](mailto:matheus.felipe.19rt@gmail.com)
 - [**My LinkedIn Profile**](https://www.linkedin.com/in/matheus-mortari-19rt)
 - [**My GitHub Profile**](https://github.com/matimortari)
+
+---
+
+## 📄 License
+
+MIT License
+
+Copyright (c) 2025 Matheus Mortari
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
