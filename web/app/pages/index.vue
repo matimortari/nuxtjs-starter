@@ -92,24 +92,7 @@ async function copyToClipboard() {
 
 useHead({
   title: "Nuxt.js Starter",
-  link: [{ rel: "canonical", href: "https://matimortari-nuxtjs-starter.vercel.app" }, { rel: "icon", href: "/favicon.svg" }],
-  meta: [
-    { name: "description", content: "A full-stack starter setup for Nuxt 4. Built with modern tools and best practices to help you get up and running quickly." },
-    { property: "og:title", content: "Nuxt.js Starter" },
-    { property: "og:description", content: "A full-stack starter setup for Nuxt 4. Built with modern tools and best practices to help you get up and running quickly." },
-    { property: "og:type", content: "website" },
-    { property: "og:image", content: "https://matimortari-nuxtjs-starter.vercel.app/og-image.png" },
-    { property: "og:url", content: "https://matimortari-nuxtjs-starter.vercel.app" },
-    { name: "google-site-verification", content: "2j0bcfhh8FCYPpzFylzbiPjl3Pa0X7lMuG060ctsCsA" },
-  ],
-})
-
-useSeoMeta({
-  title: "Nuxt.js Starter",
-  description: "A full-stack starter setup for Nuxt 4. Built with modern tools and best practices to help you get up and running quickly.",
-  ogTitle: "Nuxt.js Starter",
-  ogDescription: "A full-stack starter setup for Nuxt 4. Built with modern tools and best practices to help you get up and running quickly.",
-  ogImage: "https://matimortari-nuxtjs-starter.vercel.app/og-image.png",
-  ogUrl: "https://matimortari-nuxtjs-starter.vercel.app",
+  link: [{ rel: "canonical", href: "https://matimortari-nuxtjs-starter.vercel.app" }],
+  meta: [{ name: "description", content: "A full-stack starter setup for Nuxt 4. Built with modern tools and best practices to help you get up and running quickly." }],
 })
 </script>

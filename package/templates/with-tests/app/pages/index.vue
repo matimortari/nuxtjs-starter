@@ -49,9 +49,4 @@ useHead({
   title: "Home",
   meta: [{ name: "description", content: "Home page." }],
 })
-
-useSeoMeta({
-  title: "Home",
-  description: "Home page.",
-})
 </script>

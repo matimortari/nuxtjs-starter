@@ -33,8 +33,4 @@ useHead({
   title: t("signIn.meta.title"),
   meta: [{ name: "description", content: t("signIn.meta.description") }],
 })
-useSeoMeta({
-  title: t("signIn.meta.title"),
-  description: t("signIn.meta.description"),
-})
 </script>

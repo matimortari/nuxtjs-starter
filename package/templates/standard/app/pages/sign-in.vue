@@ -33,9 +33,4 @@ useHead({
   title: "Sign In",
   meta: [{ name: "description", content: "Sign In page" }],
 })
-
-useSeoMeta({
-  title: "Sign In",
-  description: "Sign In page",
-})
 </script>
