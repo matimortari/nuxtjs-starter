@@ -31,8 +31,8 @@ This starter includes multiple templates to kick-start different project types:
 - **TypeScript 6**.
 - **ESLint 9**.
 - **Tailwind CSS 4**.
-- **Google Fonts** support via **@nuxtjs/google-fonts**.
-- **Iconify Icons** support via **@nuxt/icon**.
+- **Fonts** support via **@nuxt/fonts**.
+- **Icons** support via **@nuxt/icon**.
 - **OAuth** authentication with Google and GitHub via **nuxt-auth-utils**.
 - **Pinia** for state management via **@pinia/nuxt**.
 - **Prisma** for database management.

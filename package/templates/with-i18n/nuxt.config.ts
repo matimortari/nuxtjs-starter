@@ -3,7 +3,7 @@ import tailwindcss from "@tailwindcss/vite"
 
 export default defineNuxtConfig({
   compatibilityDate: "2025-09-05",
-  modules: ["@nuxt/icon", "@nuxtjs/color-mode", "@nuxtjs/google-fonts", "@nuxtjs/i18n", "@pinia/nuxt", "nuxt-auth-utils"],
+  modules: ["@nuxt/fonts", "@nuxt/icon", "@nuxtjs/color-mode", "@nuxtjs/i18n", "@pinia/nuxt", "nuxt-auth-utils"],
   imports: { dirs: ["lib/**"] },
   alias: {
     "#server": fileURLToPath(new URL("./server", import.meta.url)),
@@ -13,23 +13,13 @@ export default defineNuxtConfig({
       baseUrl: process.env.NUXT_PUBLIC_BASE_URL,
     },
   },
-  vite: {
-    plugins: [tailwindcss()],
-  },
+  vite: { plugins: [tailwindcss()] },
   css: ["~/assets/styles.css"],
   colorMode: {
     classSuffix: "",
     preference: "system",
     fallback: "light",
     storageKey: "nuxt-color-mode",
-  },
-  googleFonts: {
-    display: "swap",
-    prefetch: true,
-    preconnect: true,
-    families: {
-      Inter: true,
-    },
   },
   i18n: {
     restructureDir: "app/lib",

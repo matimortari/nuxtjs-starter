@@ -8,7 +8,7 @@ export const useUserStore = defineStore("user", () => {
     error.value = null
 
     try {
-      const response = await fetch("api/user", {
+      const response = await fetch("/api/user", {
         method: "GET",
       })
       if (!response.ok)
@@ -31,7 +31,7 @@ export const useUserStore = defineStore("user", () => {
     error.value = null
 
     try {
-      const response = await fetch("api/user", {
+      const response = await fetch("/api/user", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       })
