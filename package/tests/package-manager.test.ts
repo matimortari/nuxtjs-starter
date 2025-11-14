@@ -33,11 +33,11 @@ describe("createPackageManagerCommands", () => {
       { name: "bun", installCmd: "bun install", run: "bun run test" },
     ]
 
-    managers.forEach(({ name, installCmd, run }) => {
+    for (const { name, installCmd, run } of managers) {
       const commands = pkgMgr.createPackageManagerCommands(name)
       expect(commands.installCmd).toBe(installCmd)
       expect(commands.runScript("test")).toBe(run)
-    })
+    }
   })
 })
 

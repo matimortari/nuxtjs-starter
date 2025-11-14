@@ -67,8 +67,8 @@ onMounted(async () => {
   }
 })
 
-function signOut() {
-  clear()
-  window.location.href = "/"
+async function signOut() {
+  await clear()
+  return navigateTo("/")
 }
 </script>

@@ -2,7 +2,7 @@
   <teleport to="body">
     <transition name="fade">
       <div v-if="isOpen" class="bg-opacity-50 fixed inset-0 z-50 flex items-center justify-center bg-black" @mousedown.self="close">
-        <div class="popover">
+        <div class="overlay">
           <header class="flex flex-row items-center justify-between gap-4">
             <h2>
               {{ title }}
@@ -12,7 +12,7 @@
             </button>
           </header>
 
-          <section class="m-4">
+          <section>
             <slot />
           </section>
         </div>
@@ -43,11 +43,11 @@ function handleEscape(event: KeyboardEvent) {
 }
 
 onMounted(() => {
-  window.addEventListener("keydown", handleEscape)
+  globalThis.addEventListener("keydown", handleEscape)
 })
 
 onBeforeUnmount(() => {
-  window.removeEventListener("keydown", handleEscape)
+  globalThis.removeEventListener("keydown", handleEscape)
 })
 </script>
 
