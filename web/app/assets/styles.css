@@ -7,9 +7,7 @@
   --background: #f1f1f1;
   --foreground: #0f0f0f;
   --card: #e7e4e4;
-  --card-foreground: #0f0f0f;
   --overlay: #e7e4e4;
-  --overlay-foreground: #0f0f0f;
   --primary: #56cb82;
   --primary-foreground: #0f0f0f;
   --secondary: #2a3643;
@@ -39,9 +37,7 @@ html.dark {
   --background: #0f0f0f;
   --foreground: #f1f1f1;
   --card: #1a1a1a;
-  --card-foreground: #f1f1f1;
   --overlay: #1a1a1a;
-  --overlay-foreground: #f1f1f1;
   --primary: #56cb82;
   --primary-foreground: #0f0f0f;
   --secondary: #2a3643;
@@ -60,9 +56,7 @@ html.dark {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
   --color-overlay: var(--overlay);
-  --color-overlay-foreground: var(--overlay-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
@@ -91,7 +85,7 @@ html.dark {
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--border);
+    border-color: var(--muted);
   }
 }
 
@@ -134,16 +128,14 @@ h6 {
 */
 .card {
   background-color: var(--card);
-  color: var(--card-foreground);
-  border: 1px solid var(--border);
+  border: 1px solid var(--muted);
   border-radius: 0.5rem;
   padding: 0.5rem;
 }
 
 .overlay {
   background-color: var(--overlay);
-  color: var(--overlay-foreground);
-  border: 1px solid var(--border);
+  border: 1px solid var(--muted);
   border-radius: 0.5rem;
   padding: 0.5rem;
   box-shadow: 4px 4px 8px 2px rgba(0, 0, 0, 0.4);
@@ -165,7 +157,7 @@ textarea,
 select {
   background-color: var(--input);
   color: var(--foreground);
-  border: 1px solid var(--border);
+  border: 1px solid var(--muted);
   border-radius: 0.5rem;
   padding: 0.5rem;
   font-size: 0.875rem;
@@ -210,7 +202,6 @@ select {
 
 .btn {
   --btn-bg: var(--card);
-  --btn-fg: var(--card-foreground);
 }
 .btn-primary {
   --btn-bg: var(--primary);

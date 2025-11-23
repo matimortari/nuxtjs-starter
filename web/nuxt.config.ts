@@ -1,11 +1,26 @@
+import { fileURLToPath } from "node:url"
 import tailwindcss from "@tailwindcss/vite"
 
 export default defineNuxtConfig({
-  compatibilityDate: "2025-09-05",
-  modules: ["@nuxt/fonts", "@nuxt/icon", "@nuxtjs/color-mode", "nuxt-shiki"],
-  imports: { dirs: ["lib/**"] },
-  vite: { plugins: [tailwindcss()] },
+  modules: [
+    "@nuxt/fonts",
+    "@nuxt/icon",
+    "@nuxtjs/color-mode",
+    "nuxt-shiki",
+  ],
+  imports: {
+    dirs: ["lib/**"],
+  },
+  alias: {
+    "#server": fileURLToPath(new URL("./server", import.meta.url)),
+  },
+  vite: {
+    plugins: [tailwindcss()],
+  },
   css: ["~/assets/styles.css"],
+  devtools: {
+    enabled: true,
+  },
   colorMode: {
     classSuffix: "",
     preference: "system",
