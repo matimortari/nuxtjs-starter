@@ -1,13 +1,8 @@
 # Nuxt.js Starter
 
-This project was bootstrapped via [@matimortari/nuxtjs-starter](https://www.npmjs.com/package/@matimortari/nuxtjs-starter).
+This project was bootstrapped via [**@matimortari/nuxtjs-starter**](https://www.npmjs.com/package/@matimortari/nuxtjs-starter).
 
-#### Table of Contents
-
-- [🏁 Getting Started](#getting-started)
-- [📚 More Info](#more-info)
-
-## 🏁 Getting Started
+## Getting Started
 
 1. Install dependencies:
 
@@ -31,6 +26,6 @@ npm run db:push
 npm run dev
 ```
 
-## 📚 More Info
+## More Info
 
-Visit the [full project repository](https://github.com/matimortari/nuxtjs-starter) for full documentation.
+Visit the [**full project repository**](https://github.com/matimortari/nuxtjs-starter) for full documentation.

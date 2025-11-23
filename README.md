@@ -4,13 +4,12 @@ This is a monorepo setup for a Nuxt.js starter project, which includes a web app
 
 #### Table of Contents
 
-- [📦 What's Inside?](#whats-inside)
-- [🛠️ Key Features](#key-features)
-- [🏁 Getting Started](#getting-started)
-- [📜 Scripts](#scripts)
-- [🔐 Environment Variables](#environment-variables)
-- [📬 Contact](#contact)
-
+- [📦 **What's Inside?**](#whats-inside)
+- [🛠️ **Key Features**](#key-features)
+- [🏁 **Getting Started**](#getting-started)
+- [📜 **Scripts**](#scripts)
+- [🔐 **Environment Variables**](#environment-variables)
+- [📬 **Contact**](#contact)
 ## What's Inside?
 
 #### Web Application (`web/`)
