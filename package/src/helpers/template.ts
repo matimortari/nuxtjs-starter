@@ -18,8 +18,9 @@ export async function copyPresetFiles(tmpDir: string, preset: string, targetDir:
 
   const presetRootFiles = await fs.readdir(presetDir)
   for (const file of presetRootFiles) {
-    if (file === "app")
+    if (file === "app") {
       continue
+    }
     await fs.copy(path.join(presetDir, file), path.join(targetDir, file), { overwrite: true })
   }
 

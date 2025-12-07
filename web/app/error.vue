@@ -4,7 +4,7 @@
       {{ error.statusCode }}
     </h1>
 
-    <p class="text-muted-foreground text-center">
+    <p class="text-center text-muted-foreground">
       {{ error.statusMessage || "Unknown error" }}
     </p>
 

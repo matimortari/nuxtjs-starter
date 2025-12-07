@@ -8,11 +8,10 @@ export const useUserStore = defineStore("user", () => {
     error.value = null
 
     try {
-      const response = await fetch("/api/user", {
-        method: "GET",
-      })
-      if (!response.ok)
+      const response = await fetch("/api/user", { method: "GET" })
+      if (!response.ok) {
         throw new Error(response.statusText)
+      }
 
       user.value = await response.json()
       return user.value
@@ -31,12 +30,10 @@ export const useUserStore = defineStore("user", () => {
     error.value = null
 
     try {
-      const response = await fetch("/api/user", {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-      })
-      if (!response.ok)
+      const response = await fetch("/api/user", { method: "DELETE" })
+      if (!response.ok) {
         throw new Error(response.statusText)
+      }
 
       const result = await response.json()
       user.value = null
@@ -51,5 +48,11 @@ export const useUserStore = defineStore("user", () => {
     }
   }
 
-  return { user, isLoading, error, getUser, deleteUser }
+  return {
+    user,
+    isLoading,
+    error,
+    getUser,
+    deleteUser,
+  }
 })

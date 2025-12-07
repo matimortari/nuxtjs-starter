@@ -8,7 +8,7 @@
 
     <footer>
       <div class="container mx-auto py-4 text-center">
-        <p class="text-muted-foreground text-sm">
+        <p class="text-sm text-muted-foreground">
           &copy; {{ new Date().getFullYear() }} Nuxt.js Starter. All rights reserved.
         </p>
       </div>

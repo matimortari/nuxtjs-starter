@@ -5,7 +5,7 @@
         Nuxt.js Starter 💚🏔️
       </h1>
 
-      <p class="text-primary max-w-2xl text-lg leading-5">
+      <p class="max-w-2xl text-lg leading-5 text-primary">
         A full-stack starter setup for Nuxt 4. Built with modern tools and best practices to help you get up and running quickly.
       </p>
     </header>
@@ -13,23 +13,23 @@
     <hr class="my-8 w-full md:w-4/5">
 
     <section class="flex flex-col items-center text-center">
-      <p class="border-primary mb-4 max-w-3xl border-b pb-4 text-center text-sm">
+      <p class="mb-4 max-w-3xl border-b border-primary pb-4 text-center text-sm">
         The Base Package includes everything you need to start a Nuxt project: TypeScript, ESLint, Tailwind CSS, Pinia, OAuth authentication, Prisma, and analytics integration. It's the perfect foundation to build upon.
       </p>
 
-      <p class="text-muted-foreground my-2 text-center text-lg font-semibold">
+      <p class="my-2 text-center text-lg font-semibold text-muted-foreground">
         Extend your project with these additional options:
       </p>
 
       <div class="flex w-full flex-col items-center gap-4 text-sm md:flex-row md:justify-between md:gap-12">
-        <div class="border-primary flex flex-col items-center border-b py-4 text-center">
+        <div class="flex flex-col items-center border-b border-primary py-4 text-center">
           <h4>
             i18n Support
           </h4>
           <span>Internationalization via @nuxtjs/i18n.</span>
         </div>
 
-        <div class="border-primary flex flex-col items-center border-b py-4 text-center">
+        <div class="flex flex-col items-center border-b border-primary py-4 text-center">
           <h4>
             Testing Suite
           </h4>
@@ -50,7 +50,7 @@
       </p>
 
       <article class="card flex flex-col p-0">
-        <div class="text-muted-foreground flex items-center justify-between gap-4 p-2 text-start text-sm leading-5">
+        <div class="flex items-center justify-between gap-4 p-2 text-start text-sm leading-5 text-muted-foreground">
           <p>
             > After installing, run the following commands to get started:
           </p>

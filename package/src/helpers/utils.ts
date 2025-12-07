@@ -37,8 +37,9 @@ export async function validateTargetDirectory(projectName: string) {
       default: false,
     })
 
-    if (!overwrite)
+    if (!overwrite) {
       return null
+    }
 
     await fs.remove(targetDir)
   }
