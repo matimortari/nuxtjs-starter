@@ -85,6 +85,7 @@ async function run() {
      2. Migrate or push database schemas:
      npm run db:migrate
      npm run db:push
+     npm run db:generate
 
      3. Start the development server:
       npm run dev

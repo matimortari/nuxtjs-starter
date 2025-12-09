@@ -22,17 +22,17 @@ export const PRESET_EXTRA_PACKAGES: Record<Preset, Extras> = {
   "standard": {},
   "with-i18n": {
     dependencies: {
-      "@nuxtjs/i18n": "10.2.0",
+      "@nuxtjs/i18n": "10.2.1",
     },
   },
   "with-tests": {
     devDependencies: {
       "@nuxt/test-utils": "3.19.2",
-      "@vitest/coverage-v8": "4.0.8",
+      "@vitest/coverage-v8": "4.0.15",
       "@vue/test-utils": "3.20.0",
       "happy-dom": "13.7.6",
-      "@playwright/test": "1.56.1",
-      "vitest": "4.0.8",
+      "@playwright/test": "1.57.0",
+      "vitest": "4.0.15",
     },
   },
 }

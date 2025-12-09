@@ -87,6 +87,7 @@ npm run build       # Build the app for production
 npm run postinstall # Create the .nuxt directory and generate types
 npm run lint        # Run ESLint to check for code quality issues
 npm run lint:fix    # Run ESLint and automatically fix issues
+npm run db:generate # Generate the Prisma client
 npm run db:push     # Push schema changes directly to the database
 npm run db:migrate  # Apply migrations to the database and generate the Prisma client
 npm run db:studio   # Open Prisma Studio in the browser for database management
