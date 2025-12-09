@@ -7,7 +7,6 @@ This is a monorepo setup for a Nuxt.js starter project, which includes a web app
 - [📦 **What's Inside?**](#whats-inside)
 - [🛠️ **Key Features**](#key-features)
 - [🏁 **Getting Started**](#getting-started)
-- [📜 **Scripts**](#scripts)
 - [🔐 **Environment Variables**](#environment-variables)
 - [📬 **Contact**](#contact)
 ## What's Inside?
@@ -27,7 +26,7 @@ This starter includes multiple templates to kick-start different project types:
 #### Standard Template
 
 - **Nuxt 4** with **Vue** composition API and **Nitro** server engine.
-- **TypeScript 6**.
+- **TypeScript 5**.
 - **ESLint 9**.
 - **Tailwind CSS 4**.
 - **Fonts** support via **@nuxt/fonts**.
@@ -76,21 +75,6 @@ npm run dev
 ```
 
 > ⚠️ Ensure your `.env` file is properly configured before running database commands.
-
-## Scripts
-
-The following scripts are available to manage the application:
-
-```bash
-npm run dev         # Run the app in development mode
-npm run build       # Build the app for production
-npm run postinstall # Create the .nuxt directory and generate types
-npm run lint        # Run ESLint to check for code quality issues
-npm run lint:fix    # Run ESLint and automatically fix issues
-npm run db:push     # Push schema changes directly to the database
-npm run db:migrate  # Apply migrations to the database and generate the Prisma client
-npm run db:studio   # Open Prisma Studio in the browser for database management
-```
 
 ## Environment Variables
 

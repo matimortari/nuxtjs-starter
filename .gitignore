@@ -1,12 +1,11 @@
 .output
 .data
+.generated
 .nuxt
 .nitro
 .cache
 dist
 build
-.nuxt
-.output
 out
 test-results
 coverage
@@ -14,8 +13,6 @@ node_modules
 logs
 temp
 tmp
-my-nuxt-app
-
 
 .DS_Store
 .fleet

@@ -18,6 +18,8 @@ npm install
 npm run db:migrate
 # or
 npm run db:push
+
+npm run db:generate
 ```
 
 4. Run the development server:
