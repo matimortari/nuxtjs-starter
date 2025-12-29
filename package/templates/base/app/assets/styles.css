@@ -1,26 +1,25 @@
 @import "tailwindcss";
 
 /*
-  Default theme (light mode)
+  Base styles
 */
 :root {
   --background: #f1f1f1;
   --foreground: #0f0f0f;
   --card: #e7e4e4;
   --overlay: #e7e4e4;
-  --primary: #56cb82;
-  --primary-foreground: #0f0f0f;
-  --secondary: #2a3643;
-  --secondary-foreground: #f1f1f1;
   --muted: #e1e1e1;
   --muted-foreground: #707070;
+
+  /* Surfaces */
+  --primary: #56cb82;
+  --secondary: #2a3643;
   --danger: #ed3c50;
   --success: #42b883;
-  --accent: #3d76b6;
 
-  /*
-    Base styles
-  */
+  /* Content on surfaces */
+  --surface-foreground: #e5e7eb;
+
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-default);
@@ -38,15 +37,17 @@ html.dark {
   --foreground: #f1f1f1;
   --card: #1a1a1a;
   --overlay: #1a1a1a;
-  --primary: #56cb82;
-  --primary-foreground: #0f0f0f;
-  --secondary: #2a3643;
-  --secondary-foreground: #f1f1f1;
   --muted: #242424;
   --muted-foreground: #9b9b9b;
+
+  /* Surfaces */
+  --primary: #56cb82;
+  --secondary: #2a3643;
   --danger: #ed3c50;
   --success: #42b883;
-  --accent: #3d76b6;
+
+  /* Content on surfaces */
+  --surface-foreground: #e5e7eb;
 }
 
 /*
@@ -57,15 +58,13 @@ html.dark {
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-overlay: var(--overlay);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
   --color-danger: var(--danger);
   --color-success: var(--success);
-  --color-accent: var(--accent);
 
   --font-default: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
@@ -94,32 +93,32 @@ html.dark {
 */
 h1 {
   font-size: 2.25rem;
-  line-height: 2.5rem;
-  font-weight: 800;
-}
-h2 {
-  font-size: 1.875rem;
   line-height: 2.25rem;
   font-weight: 800;
 }
-h3 {
-  font-size: 1.5rem;
+h2 {
+  font-size: 2rem;
   line-height: 2rem;
+  font-weight: 800;
+}
+h3 {
+  font-size: 1.875rem;
+  line-height: 1.875rem;
   font-weight: 700;
 }
 h4 {
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   line-height: 1.75rem;
   font-weight: 700;
 }
 h5 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
   font-weight: 700;
 }
 h6 {
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
   font-weight: 700;
 }
 
@@ -138,6 +137,7 @@ h6 {
   border: 1px solid var(--muted);
   border-radius: 0.5rem;
   padding: 0.5rem;
+  z-index: 40;
   box-shadow: 4px 4px 8px 2px rgba(0, 0, 0, 0.4);
 }
 
@@ -147,9 +147,11 @@ h6 {
 input,
 textarea,
 select {
-  background-color: var(--input);
-  color: var(--foreground);
+  appearance: none;
+  background-color: var(--card);
+  color: var(--muted-foreground);
   border: 1px solid var(--muted);
+  accent-color: var(--muted);
   border-radius: 0.5rem;
   padding: 0.5rem;
   font-size: 0.875rem;
@@ -174,66 +176,74 @@ select {
   border-radius: 0.5rem;
   white-space: nowrap;
   user-select: none;
-  cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
 
 .btn:hover,
-.btn:focus {
-  opacity: 0.6;
-  outline: none;
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-danger:hover,
+.btn-success:hover,
+.btn:active,
+.btn-primary:active,
+.btn-secondary:active,
+.btn-danger:active,
+.btn-success:active {
+  transform: scale(1.02);
+  filter: brightness(0.8);
 }
-.btn:active {
-  opacity: 0.8;
-  transform: scale(0.95);
-}
-.btn:disabled {
+
+.btn:disabled,
+.btn-primary:disabled,
+.btn-secondary:disabled,
+.btn-danger:disabled,
+.btn-success:disabled {
+  filter: brightness(0.8);
   cursor: not-allowed;
-  opacity: 0.4;
 }
 
 .btn {
   --btn-bg: var(--card);
+  --btn-fg: var(--foreground);
 }
 .btn-primary {
   --btn-bg: var(--primary);
-  --btn-fg: var(--primary-foreground);
+  --btn-fg: var(--surface-foreground);
 }
 .btn-secondary {
   --btn-bg: var(--secondary);
-  --btn-fg: var(--secondary-foreground);
+  --btn-fg: var(--surface-foreground);
 }
 .btn-danger {
-  --btn-fg: var(--danger);
+  --btn-bg: var(--danger);
+  --btn-fg: var(--surface-foreground);
 }
 .btn-success {
-  --btn-fg: var(--success);
+  --btn-bg: var(--success);
+  --btn-fg: var(--surface-foreground);
+}
+
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-danger,
+.btn-success {
+  background-color: var(--btn-bg);
+  color: var(--btn-fg);
 }
 
 /*
-  Background color utilities for matching themes
+  Background color utilities
 */
 .bg-primary {
   background-color: var(--primary);
-  color: var(--primary-foreground);
+  color: var(--surface-foreground);
 }
 .bg-secondary {
   background-color: var(--secondary);
-  color: var(--secondary-foreground);
-}
-.bg-accent {
-  background-color: var(--accent);
-  color: var(--accent-foreground);
+  color: var(--surface-foreground);
 }
 .bg-muted {
   background-color: var(--muted);
   color: var(--muted-foreground);
-}
-.bg-danger {
-  background-color: var(--danger);
-  color: var(--secondary-foreground);
-}
-.bg-success {
-  background-color: var(--success);
-  color: var(--secondary-foreground);
 }

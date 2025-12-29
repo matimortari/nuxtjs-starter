@@ -1,8 +1,16 @@
 <template>
-  <NuxtLayout>
+  <main class="min-h-screen">
     <Analytics :debug="false" />
     <NuxtPage />
-  </NuxtLayout>
+  </main>
+
+  <footer>
+    <div class="container mx-auto py-4 text-center">
+      <p class="text-sm text-muted-foreground">
+        {{ new Date().getFullYear() }} Nuxt.js Starter. All rights reserved.
+      </p>
+    </div>
+  </footer>
 </template>
 
 <script setup lang="ts">
